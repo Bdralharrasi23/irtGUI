@@ -782,8 +782,8 @@ irtGUI<-function(){
     })
 
     output$info<-renderText({
-      paste(p(strong('Package:'), "IRTshiny"),p(strong('Background Packages:'), "mirt,","irtoys,","psych"),
-            p(strong('Package Description:'), "Performing IRT analysis such as parameter estimation, ability estimation, item and model fit analyse, local independence assumption, dimensionality assumption, characteristic, and information curves under various models with a user-friendly shiny interface."),
+      paste(p(strong('Package:'), "irtGUI"),p(strong('Background Packages:'), "mirt,","irtoys,","psych","WrightMap"),
+            p(strong('Package Description:'), "Performing IRT analysis such as parameter estimation, ability estimation, item and model fit analyse, local independence assumption, dimensionality assumption, Wright Map, item characteristic, and item information curves under various models with a user-friendly GUI."),
 
             p(strong('Package Author:'), "Huseyin Yildiz"),
             p(strong('e-mail:'), tags$a(href="mailto:huseyinyildiz35@gmail.com", "huseyinyildiz35@gmail.com"))
@@ -829,7 +829,7 @@ irtGUI<-function(){
         paste("dataset", ".xlsx", sep="")
       },
       content = function(file) {
-        write.xlsx(generate(), file,row.names = FALSE)
+        write_xlsx(generate(), file)
       }
     )
 
@@ -838,7 +838,7 @@ irtGUI<-function(){
         paste("parameters", ".xlsx", sep="")
       },
       content = function(file) {
-        write.xlsx(parametre(), file,row.names = FALSE)
+        write_xlsx(parametre(), file)
       }
     )
 
@@ -847,7 +847,7 @@ irtGUI<-function(){
         paste("abilities", ".xlsx", sep="")
       },
       content = function(file) {
-        write.xlsx(thetaa(), file,row.names = FALSE)
+        write_xlsx(thetaa(), file)
       }
     )
 
@@ -856,7 +856,7 @@ irtGUI<-function(){
         paste("localindipendence", ".xlsx", sep="")
       },
       content = function(file) {
-        write.xlsx(localind(), file,row.names = FALSE)
+        write_xlsx(localind(), file)
       }
     )
 
